@@ -15,7 +15,18 @@ do
 	    # Write deletion code here
 	    ;;
 	"Update")
-	    # Write Update code here
+	    read -rp "Enter student ID for update: " ID
+	    old=$(cat students-list_0333.txt | grep $ID)
+	    if [ -z "$old" ];
+	    then
+                echo "No ID match found"
+                continue
+	    fi
+            echo "$old"
+	    read -rp "Enter student email: " email
+	    read -rp "Enter student age: " age
+	    new="$email:$age:$ID"
+	    sed -i "s/$old/$new/g" students-list_0333.txt
 	    ;;
 	"View")
 	    # Write view code here
