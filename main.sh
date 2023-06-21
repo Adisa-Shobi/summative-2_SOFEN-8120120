@@ -12,7 +12,9 @@ do
 	    echo "$email $age $ID" >>students-list_0333.txt
 	    ;;
 	"Delete")
-	    # Write deletion code here
+	    read -rp "Enter student ID: " ID
+            grep -v $ID < students-list_0333.txt > modified-students-list_0333.txt
+            mv modified-students-list_0333.txt students-list_0333.txt
 	    ;;
 	"Update")
 	    # Write Update code here
