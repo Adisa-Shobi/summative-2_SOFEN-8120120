@@ -18,7 +18,7 @@ do
 	    # Write Update code here
 	    ;;
 	"View")
-	    # Write view code here
+	    cat students-list_0333.txt
 	    ;;
 	"Exit")
 	    break
