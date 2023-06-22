@@ -6,10 +6,10 @@ do
     read -rp "What operation would you like to perform {Create|View|Delete|Update|Exit}: " name
     case $name in
 	"Create")
-	    read -rp "Enter student email:" email
-	    read -rp "Enter student age:" age
-	    read -rp "Enter student ID:" ID
-	    echo "$email $age $ID" >>students-list_0333.txt
+	    read -rp "Enter student email: " email
+	    read -rp "Enter student age: " age
+	    read -rp "Enter student ID: " ID
+	    echo "$email:$age:$ID" >>students-list_0333.txt
 	    ;;
 	"Delete")
 	    read -rp "Enter student ID: " ID
@@ -25,8 +25,8 @@ do
                 continue
 	    fi
             echo "$old"
-	    read -rp "Enter student email: " email
-	    read -rp "Enter student age: " age
+	    read -rp "Enter new student email: " email
+	    read -rp "Enter new student age: " age
 	    new="$email:$age:$ID"
 	    sed -i "s/$old/$new/g" students-list_0333.txt
 	    ;;
